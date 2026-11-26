@@ -1,0 +1,14 @@
+services:
+  staff-card-editor:
+    build: .
+    ports:
+      - "3000:3001"
+    environment:
+      PORT: "3001"
+      DATA_DIR: /app/data
+    volumes:
+      - staff-card-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  staff-card-data:
